@@ -1,4 +1,4 @@
-// Template for subcommands
+// Template for subcommands of ccci
 package cmd
 
 import (
@@ -7,21 +7,22 @@ import (
 	"github.com/spf13/cobra"
 )
 
-func init() {
-	someCmd.Flags().BoolVarP(&useBeer, "someflag", "s", false, "Some flag for subcommand.")
-	rootCmd.AddCommand(someCmd)
-}
-
 var (
 	someFlag = false
 	someCmd  = &cobra.Command{
 		Use:   "sample-sub-command",
 		Short: "Idunno.",
-		Long:  "You be you.",
+		Long:  "This is a template for sub commands of ccci using cobra library.",
 		Run:   runSubCommand,
 	}
 )
 
+func init() {
+	someCmd.Flags().BoolVarP(&someFlag, "someflag", "s", false, "Some flag for subcommand.")
+	rootCmd.AddCommand(someCmd)
+}
+
+
 func runSubCommand(cmd *cobra.Command, args []string) {
-	fmt.Println("execute subcommand")
+	fmt.Println("executing subcommand")
 }
