@@ -15,7 +15,7 @@ func init() {
 }
 
 var (
-useBeer = false
+	useBeer  = false
 	countCmd = &cobra.Command{
 		Use:   "count",
 		Short: "Count from 1 to 100, written out longhand",
